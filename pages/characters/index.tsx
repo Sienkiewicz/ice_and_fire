@@ -128,7 +128,7 @@ export default function Home({
 
   return (
     <>
-      <MainLayout isLoading={isFetchingPage} title='characters'>
+      <MainLayout title='characters'>
         <Container maxWidth='md'>
           {charactersData && (
             <Box pt={3}>

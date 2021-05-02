@@ -1,10 +1,6 @@
 import { IconButton, TableCell, TableRow } from '@material-ui/core'
 import { useRouter } from 'next/router'
-import React from 'react'
-import { ReactNode } from 'react'
-import { ReactElement } from 'react'
-import { useCallback } from 'react'
-import { FC } from 'react'
+import React, { FC, ReactNode, ReactElement, useCallback } from 'react'
 import { CharactersDataType } from '../../helpers/types'
 
 type Props = {
@@ -23,7 +19,7 @@ export const EnhancedTableRow: FC<Props> = ({
   const router = useRouter()
 
   const handleClick = useCallback(
-    (id: string): void => {
+    (id: number): void => {
       router.push({
         pathname: '/books/[id]',
         query: { id },
@@ -45,7 +41,7 @@ export const EnhancedTableRow: FC<Props> = ({
       <TableCell align='right'>{row.gender}</TableCell>
       <TableCell align='right'>
         {row.books.map(
-          (book: { id: number }, i: number): ReactNode => {
+          (book, i): ReactNode => {
             return (
               <IconButton
                 key={book.id}
