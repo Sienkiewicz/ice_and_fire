@@ -17,6 +17,7 @@ type Props = {
 }
 
 const index: FC<Props> = ({ data }: Props): ReactElement => {
+  console.log()
   return (
     <MainLayout title={`${data.name}`}>
       <Container maxWidth='md'>
